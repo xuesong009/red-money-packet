@@ -116,7 +116,7 @@ body {
 .lg-rmp > .lg-rmp-bottom > .info {
   width: 100%;
   height: 20px;
-  padding:0 10px;
+  padding: 0 10px;
   margin-bottom: 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -131,7 +131,7 @@ body {
 
 .lg-rmp > .lg-rmp-bottom > .get-btn {
   width: 80%;
-  height:25px;
+  height: 25px;
   background: #FEB42F;
   margin: 0 auto;
   -webkit-border-radius: 3px;
@@ -146,3 +146,38 @@ body {
 }
 
 /* 2.3 lg open */
+
+/*  */
+#wrap > .getedPacket {
+  width: 150px;
+  height: 60px;
+  background: rgba(255, 255, 255, .4);
+  position: absolute;
+  right: 0;
+  top: 150px;
+  -webkit-box-shadow:  0 0 10px rgb(255,0,0);
+  -moz-box-shadow:  0 0 10px rgb(255,0,0);
+  box-shadow:  0 0 10px rgb(255,0,0);
+}
+
+#wrap > .getedPacket > .title {
+  width: 100%;
+  height: 25px;
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  line-height: 25px;
+  text-align: left;
+}
+
+#wrap > .getedPacket > .getTotal {
+  width: 100%;
+  height: 35px;
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(0,0,0);
+  text-indent: 2em;
+  line-height: 35px;
+}
