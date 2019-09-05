@@ -24,6 +24,7 @@ body {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, .3);
+  overflow: hidden;
 }
 
 .rmp {
@@ -100,7 +101,7 @@ body {
   top: 64px;
   text-align: center;
   line-height: 64px;
-  font-size: 36px;
+  font-size: 25px;
 }
 
 .lg-rmp > .lg-rmp-bottom {
