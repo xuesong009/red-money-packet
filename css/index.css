@@ -1,0 +1,148 @@
+@charset "utf-8";
+/** 1.common css **/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table-cell;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+html {
+  height: 100%; /*layout*/
+}
+
+body {
+  height: 100%; /*layout*/
+}
+
+#wrap {
+  height: 100%; /*layout*/
+  position: relative;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .3);
+}
+
+.rmp {
+  position: absolute;
+  overflow: hidden;
+  background: #DF423B;
+  /*border: 1px solid blue;*/
+}
+
+.rmp > .rmp-top {
+  position: absolute;
+  background: #F24D47;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.rmp > .rmp-tip {
+  background: yellow;
+  position: absolute;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  font-family: "Microsoft YaHei", georgia, serif, sans-serif;
+  color: #E45D5D;
+}
+
+/** 2.main css **/
+/* 2.1 sm */
+.sm-rmp {
+  width: 50px;
+  height: 65px;
+  top: 200px; /*test*/
+  left: 500px; /*test*/
+  cursor: pointer;
+}
+
+.sm-rmp > .sm-rmp-top {
+  width: 60px;
+  height: 60px;
+  left: -5px;
+  top: -30px; /*需要使用百分比*/
+}
+
+.sm-rmp > .sm-rmp-tip {
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  left: 15px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+/* 2.2 lg */
+.lg-rmp {
+  width: 160px;
+  height: 208px;
+  top: 320px; /*test*/
+  left: 530px; /*test*/
+  display: none;
+}
+
+.lg-rmp > .lg-rmp-top {
+  width: 192px;
+  height: 192px;
+  left: -16px;
+  top: -96px;
+}
+
+.lg-rmp > .lg-rmp-tip {
+  width: 64px;
+  height: 64px;
+  left: 48px;
+  top: 64px;
+  text-align: center;
+  line-height: 64px;
+  font-size: 36px;
+}
+
+.lg-rmp > .lg-rmp-bottom {
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 15px;
+}
+
+.lg-rmp > .lg-rmp-bottom > .info {
+  width: 100%;
+  height: 20px;
+  padding:0 10px;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*background: #cccccc;*/
+  text-align: center;
+  line-height: 20px;
+  font-family: "Microsoft YaHei", georgia, serif, sans-serif;
+  font-size: 14px;
+  color: #FFB99B;
+}
+
+.lg-rmp > .lg-rmp-bottom > .get-btn {
+  width: 80%;
+  height:25px;
+  background: #FEB42F;
+  margin: 0 auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-family: "Microsoft YaHei", georgia, serif, sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  color: #FFEB92;
+  cursor: pointer;
+}
+
+/* 2.3 lg open */
