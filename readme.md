@@ -38,10 +38,11 @@
   padding-bottom: 15px;
 
 ###2.2 动态效果
-####2.2.1 数据
-数量(num) 随机;
-每个红包的金额(money) 不同;
-每个红包的运动速度(speed) 不同,加速度(accelerated speed) --> top,left;
+####2.2.1 属性
+<1> 红包数量(num) 随机;
+<2> 总金额 total; 
+<3> 每个红包的金额(money) 不同;
+<4> 每个红包的运动速度(speed) 不同,加速度(accelerated speed) --> top,left;
 路程(y) document.body.offsetHeight;
 
 距离顶部 top = y;
@@ -50,4 +51,8 @@
 点击红包 动画 显示金额 提示存入钱包;
 
 ####2.2.2 动态
-
+<1> 产生一定数量num的sm;
+<2> 每个sm 金额money, 不能超过总额total;
+<3> sm向下运动, left/top;
+<4> 某个红包被点击 --> lg, 
+<5> 继续; 
