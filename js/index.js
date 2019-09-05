@@ -8,6 +8,9 @@ window.onload = function () {
   //领取金额
   var getTotal = 0;
 
+  //尚未发放金额
+  var leftTotal = total - getTotal;
+
   //hasGet
   var hasGet = document.querySelector('.hasGet');
   hasGet.innerText = 0;
@@ -74,6 +77,7 @@ window.onload = function () {
       var ele = this.createElement();
       var that = this;
 
+      //动画
       this.timer = setInterval(function () {
         //console.log(this);
         //console.log(document.body.offsetHeight);
@@ -105,15 +109,27 @@ window.onload = function () {
         newEle.innerHTML = '<p class="info">大吉大利,新春快乐</p><p class="get-btn">领取红包</p>';
         ele.appendChild(newEle);
 
+        //动画
+        animateFn(this);
+
         //领取金额
         getTotal += that.value;
         hasGet.innerText = getTotal;
 
-        //动画
-        animateFn(this);
-        return getTotal;
-        //ele = that.createElement();
-        //ele.style.top=
+        //还有多少未发放?
+        /*http({
+          type: 'get',
+          url: 'http://www.baidu.com',
+          data: leftTotal - getTotal,
+          success: function (data) {
+            if (data <= 0) {
+              return;
+            } else {
+              createRMP(leftTotal);
+            }
+          }
+        });*/
+
       };
     } else {
       return new RMP(role, id, value, x, y);
@@ -125,56 +141,47 @@ window.onload = function () {
     return Math.floor(Math.random() * choices + lowerValue);
   }
 
-  function ranfun(lowerValue, upperValue) {
-    var choices = upperValue - lowerValue + 1;
-    return Math.random() * choices + lowerValue;
-  }
+  function createRMP(leftTotal) {
+    //num 红包数量
+    var num = getRandom(1, 10);
 
-  function cteateRMP() {
+    //每个红包金额
+    var value;
 
-    // console.log(wrap.offsetWidth);
+    //每个红包的速度,偏移量
+    var x,
+      splus,
+      y = 0;
 
-    // var onceTotal = 0;//每轮总金额
-    var leftTotal = total - getTotal;
-    var totalTimer = setInterval(function () {
-      var oneceTimer;
-      if (leftTotal <= 0) {
-        clearInterval(oneceTimer);
-        clearInterval(totalTimer);
+    //计数
+    var i = 1;
+
+    var createTimer = setInterval(function () {
+      if (i > num) {
+        clearInterval(createTimer);
       } else {
-        oneceTimer = setInterval(function () {
-          //num 红包数量
-          var num = getRandom(1, 2);
-
-          //每个红包金额
-          var value;
-
-          //每个红包的速度,偏移量
-          var x, splus,
-            y = 0;
-
-          //计数
-          var i = 1;
-
-          if (i > num) {
-            clearInterval(createTimer);
-          } else {
-            value = getRandom(1, leftTotal);
-            x = getRandom(0, wrap.offsetWidth);
-            splus = getRandom(-10, 5);
-            x += splus;
-            y += splus;//需要修改
-            RMP('sm', i, value, x, y);
-            leftTotal = leftTotal - getTotal;
-            i++;
-          }
-        }, 220);
-        console.log(leftTotal);
+        leftTotal = leftTotal - getTotal;
+        value = getRandom(1, leftTotal);
+        x = getRandom(0, wrap.offsetWidth);
+        splus = getRandom(-10, 5);
+        x += splus;
+        y += splus;//需要修改
+        RMP('sm', i, value, x, y);
+        // leftTotal = leftTotal - getTotal;
+        i++;
       }
-    }, 50000);
+    }, 220);
+    //console.log(leftTotal);
   }
 
-  //test
-  //var rmp = new RMP('sm', 150, 380, 56, 23);
-  cteateRMP();
+  //init
+  /*http({
+    type: 'get',
+    url: 'http://www.baidu.com',
+    data: leftTotal,
+    success: function (data) {
+      createRMP(leftTotal);
+    }
+  });*/
+  createRMP(leftTotal);
 };
